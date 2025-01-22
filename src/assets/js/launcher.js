@@ -18,7 +18,7 @@ const fs = require('fs');
 class Launcher {
     async init() {
         this.initLog();
-        console.log('Initializing Launcher...');
+        console.log('Inicializando el launcher...');
         this.shortcut()
         await setBackground()
         if (process.platform == 'win32') this.initFrame();
@@ -60,7 +60,7 @@ class Launcher {
     }
 
     initFrame() {
-        console.log('Initializing Frame...')
+        console.log('Inicializando Frame...')
         document.querySelector('.frame').classList.toggle('hide')
         document.querySelector('.dragbar').classList.toggle('hide')
 
@@ -84,7 +84,7 @@ class Launcher {
     }
 
     async initConfigClient() {
-        console.log('Initializing Config Client...')
+        console.log('Inicializando la configuración del cliente...')
         let configClient = await this.db.readData('configClient')
 
         if (!configClient) {
@@ -140,10 +140,10 @@ class Launcher {
                     continue
                 }
                 if (account.meta.type === 'Xbox') {
-                    console.log(`Account Type: ${account.meta.type} | Username: ${account.name}`);
+                    console.log(`Tipo de cuenta: ${account.meta.type} | Nombre de usuario: ${account.name}`);
                     popupRefresh.openPopup({
-                        title: 'Connexion',
-                        content: `Refresh account Type: ${account.meta.type} | Username: ${account.name}`,
+                        title: 'Conectando...',
+                        content: `Actualizando tipo de cuenta: ${account.meta.type} | Nombre de usuario: ${account.name}`,
                         color: 'var(--color)',
                         background: false
                     });
@@ -165,10 +165,10 @@ class Launcher {
                     await addAccount(refresh_accounts)
                     if (account_ID == account_selected) accountSelect(refresh_accounts)
                 } else if (account.meta.type == 'AZauth') {
-                    console.log(`Account Type: ${account.meta.type} | Username: ${account.name}`);
+                    console.log(`Tipo de cuenta: ${account.meta.type} | Nombre de usuario: ${account.name}`);
                     popupRefresh.openPopup({
-                        title: 'Connexion',
-                        content: `Refresh account Type: ${account.meta.type} | Username: ${account.name}`,
+                        title: 'Conectando...',
+                        content: `Actualizando tipo de cuenta: ${account.meta.type} | Nombre de usuario: ${account.name}`,
                         color: 'var(--color)',
                         background: false
                     });
@@ -189,10 +189,10 @@ class Launcher {
                     await addAccount(refresh_accounts)
                     if (account_ID == account_selected) accountSelect(refresh_accounts)
                 } else if (account.meta.type == 'Mojang') {
-                    console.log(`Account Type: ${account.meta.type} | Username: ${account.name}`);
+                    console.log(`Tipo de cuenta: ${account.meta.type} | Nombre de usuario: ${account.name}`);
                     popupRefresh.openPopup({
-                        title: 'Connexion',
-                        content: `Refresh account Type: ${account.meta.type} | Username: ${account.name}`,
+                        title: 'Conectando...',
+                        content: `Actualizando tipo de cuenta: ${account.meta.type} | Nombre de usuario: ${account.name}`,
                         color: 'var(--color)',
                         background: false
                     });
@@ -223,7 +223,7 @@ class Launcher {
                     await addAccount(refresh_accounts)
                     if (account_ID == account_selected) accountSelect(refresh_accounts)
                 } else {
-                    console.error(`[Account] ${account.name}: Account Type Not Found`);
+                    console.error(`[Account] ${account.name}: No se encontró un tipo de cuenta`);
                     this.db.deleteData('accounts', account_ID)
                     if (account_ID == account_selected) {
                         configClient.account_selected = null

@@ -13,6 +13,19 @@ const fs = require('fs');
 const UpdateWindow = require("./assets/js/windows/updateWindow.js");
 const MainWindow = require("./assets/js/windows/mainWindow.js");
 
+const rpc = require('discord-rich-presence')('1319474350067548170');
+
+rpc.updatePresence({
+  state: '¡Jugando!',
+  details: 'Ezquisoland 2',
+  startTimestamp: Date.now(),
+  largeImageKey: 'logo',
+  largeImageText: 'Ezquisoland Launcher',
+  instance: true,
+});
+
+console.log("Discord Rich Presence activado.");
+
 let dev = process.env.NODE_ENV === 'dev';
 
 if (dev) {

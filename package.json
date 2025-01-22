@@ -1,15 +1,15 @@
 {
-    "name": "Selvania-Launcher",
-    "preductname": "Selvania Launcher",
-    "version": "2.0.7",
-    "description": "Launcher Mincraft pour le serveur Selvania",
+    "name": "ezquiso-launcher",
+    "preductname": "Ezquiso Launcher",
+    "version": "1.0.0",
+    "description": "Launcher Oficial de Ezquisoland",
     "main": "src/app.js",
     "author": {
-        "name": "luuxis, Inc.",
-        "email": "contact@luuxis.fr",
-        "url": "https://github.com/luuxis"
+        "name": "ImNotRuso / Mqrttin",
+        "email": "contacto@gmail.com",
+        "url": "https://github.com/Mqrttin"
     },
-    "url": "http://launcher.luuxis.fr",
+    "url": "https://ezquiso.websr.fr/launcher",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
@@ -22,6 +22,8 @@
         "ignore": "**/test"
     },
     "dependencies": {
+        "azuriom-auth": "^1.0.1",
+        "discord-rich-presence": "^0.0.8",
         "electron-updater": "^6.1.8",
         "minecraft-java-core": "^3.10.4",
         "node-bdd": "^2.0.4",
@@ -39,6 +41,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/luuxis/Selvania-Launcher.git"
+        "url": "git+https://github.com/iMqrtiin/Launcher.git"
     }
 }
